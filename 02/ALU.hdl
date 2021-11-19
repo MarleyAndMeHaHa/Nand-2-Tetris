@@ -43,4 +43,7 @@ CHIP ALU {
 
     PARTS:
    // Put you code here:
+   Mux16(a=x, b=0, sel=[zx], out=xzx);
+   Not(in=xzx, out=Notxzx);
+   Mux16(a=xzx, b=Notxzx, sel=[nx], out=xt);
 }
